@@ -83,7 +83,7 @@ BEGIN
     		PRINT 'Load Duration: ' + CAST(DATEDIFF(SECOND, @start_time, @end_time) AS NVARCHAR) + ' Seconds';
     
     		PRINT '---------------------------------------------------';
-    		PRINT 'Loading CRM Tables';
+    		PRINT 'Loading ERP Tables';
     		PRINT '---------------------------------------------------';
     
     		SET @start_time = GETDATE();
