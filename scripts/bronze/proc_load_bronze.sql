@@ -1,10 +1,9 @@
 /*
-================================================================
+===============================================================================
 Load Data into Bronze Layer
-================================================================
+===============================================================================
 Script Purpose:
-    This stored procedure loads raw data from CRM and ERP CSV files
-    into the Bronze layer of the DataWarehouse.
+    This stored procedure loads raw data from CRM and ERP CSV files into the Bronze layer of the DataWarehouse.
 
 Process:
     - Records the start time of the load process.
@@ -12,14 +11,13 @@ Process:
     - Loads fresh data from the source CSV files using BULK INSERT.
     - Measures and displays the load duration for each table.
     - Displays the total execution time for the entire Bronze load.
-    - Implements TRY...CATCH error handling to capture and report
-      any errors encountered during execution.
+    - Implements TRY...CATCH error handling to capture and report any errors encountered during execution.
 
 Notes:
     - This procedure performs a full refresh of the Bronze layer.
     - Source files must exist at the configured file paths.
     - SQL Server must have permission to access the source files.
-================================================================
+===============================================================================
 */
 
 CREATE OR ALTER PROCEDURE bronze.bronze_load AS
