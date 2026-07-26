@@ -145,5 +145,6 @@ BEGIN
 			THROW;
 	  END CATCH
 END;
+GO
 
-EXEC bronze.bronze_load
+EXEC bronze.bronze_load;
