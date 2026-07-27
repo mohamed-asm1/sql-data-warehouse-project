@@ -15,6 +15,12 @@ The data architecture for this project follows the **Medallion Architecture** pa
 2. **Silver Layer**: Implements data cleansing, standardization, validation, and normalization processes to prepare high-quality data for analysis.
 3. **Gold Layer**: Houses business-ready data modeled into a star schema, optimized for reporting, analytics, and business intelligence applications.
 
+**Data Flow Diagram:**
+![Data Flow](docs/data_flow_diagram.png)
+
+**Star Schema (Gold Layer):**
+![Star Schema](docs/star_schema_gold_layer.png)
+
 ---
 
 ## 📖 Project Overview
@@ -23,7 +29,7 @@ This comprehensive data warehousing project encompasses:
 
 1. **Data Architecture Design**: Modern data warehouse implementation using Medallion Architecture with Bronze, Silver, and Gold layers.
 2. **ETL Pipelines**: Complete extraction, transformation, and loading processes from source systems into the warehouse.
-3. **Data Modeling**: Development of fact and dimension tables optimized for analytical queries and reporting.
+3. **Data Modeling**: Development of fact and dimension tables optimized for analytical queries and reporting (see [Gold Layer Data Catalog](docs/data_catalog_gold_layer.md)).
 4. **Data Quality**: Implementation of data validation, cleansing, and quality assurance mechanisms.
 5. **Analytics & Reporting**: SQL-based analytics and reports delivering actionable business insights.
 
@@ -44,8 +50,7 @@ Everything is accessible and free!
 - **[SQL Server Express](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)**: Lightweight SQL Server edition for database hosting.
 - **[SQL Server Management Studio (SSMS)](https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16)**: GUI tool for database management and SQL development.
 - **[Git & GitHub](https://github.com/)**: Version control and repository management.
-- **[DrawIO](https://www.drawio.com/)**: Design data architecture diagrams, data flows, and models.
-- **[Notion](https://www.notion.com/)**: Project management and documentation organization.
+- **[DrawIO](https://www.drawio.com/)**: Design and edit data architecture diagrams, data flows, and models.
 - **[Datasets](datasets/)**: Access to project dataset CSV files from source systems.
 
 ---
@@ -77,8 +82,6 @@ Develop SQL-based analytics to deliver actionable insights into:
 
 These insights enable stakeholders to make strategic, data-driven business decisions.
 
-For detailed requirements, refer to [docs/requirements.md](docs/requirements.md).
-
 ---
 
 ## 📂 Repository Structure
@@ -86,48 +89,27 @@ For detailed requirements, refer to [docs/requirements.md](docs/requirements.md)
 ```
 sql-data-warehouse-project/
 │
-├── datasets/                           # Raw datasets from source systems (CSV files)
-│   ├── erp_data/                       # ERP system data
-│   └── crm_data/                       # CRM system data
+├── datasets/                           # Raw datasets from source systems
 │
 ├── docs/                               # Project documentation and architecture
-│   ├── data_architecture.drawio        # Medallion architecture diagram
-│   ├── data_architecture.png           # Architecture visualization
-│   ├── etl.drawio                      # ETL techniques and methods
-│   ├── data_flow.drawio                # Data flow diagrams
-│   ├── data_models.drawio              # Star schema and data models
-│   ├── data_catalog.md                 # Field descriptions and metadata
-│   ├── naming-conventions.md           # Naming guidelines for objects
-│   └── requirements.md                 # Detailed project requirements
+│   ├── DataWarehouseProject.drawio     # Complete project diagram with all layers
+│   ├── high_level_architecture.png     # Medallion architecture visualization
+│   ├── data_flow_diagram.png           # Data flow visualization
+│   ├── star_schema_gold_layer.png      # Star schema diagram for analytics
+│   ├── data_catalog_gold_layer.md      # Gold layer tables, fields, and metadata
+│   └── naming_conventions.md           # Naming guidelines for database objects
 │
-├── scripts/                            # SQL scripts organized by layer
-│   ├── bronze/                         # Raw data loading scripts
-│   │   ├── 01_create_bronze_schema.sql
-│   │   ├── 02_load_erp_data.sql
-│   │   └── 03_load_crm_data.sql
-│   │
-│   ├── silver/                         # Data transformation & cleansing
-│   │   ├── 01_create_silver_schema.sql
-│   │   ├── 02_clean_customer_data.sql
-│   │   ├── 03_clean_product_data.sql
-│   │   └── 04_clean_sales_data.sql
-│   │
-│   └── gold/                           # Analytical models & reporting
-│       ├── 01_create_gold_schema.sql
-│       ├── 02_create_dim_customer.sql
-│       ├── 03_create_dim_product.sql
-│       ├── 04_create_fact_sales.sql
-│       └── 05_create_analytics_views.sql
+├── scripts/                            # SQL scripts organized by Medallion layers
+│   ├── init_database.sql               # Database initialization script
+│   ├── bronze/                         # Bronze layer: Raw data loading
+│   ├── silver/                         # Silver layer: Data transformation & cleansing
+│   └── gold/                           # Gold layer: Analytical models & reporting
 │
 ├── tests/                              # Data quality tests and validation scripts
-│   ├── test_data_completeness.sql
-│   ├── test_data_accuracy.sql
-│   └── test_data_consistency.sql
 │
 ├── README.md                           # Project overview and setup instructions
 ├── LICENSE                             # MIT License
-├── .gitignore                          # Git ignore rules
-└── requirements.txt                    # Project dependencies and versions
+└── .gitignore                          # Git ignore rules
 ```
 
 ---
@@ -152,14 +134,25 @@ sql-data-warehouse-project/
    - Install SQL Server and SSMS if not already installed
    - Create a new database in your SQL Server instance
 
-3. **Execute scripts in order**
-   - Start with Bronze layer scripts to load raw data
-   - Follow with Silver layer scripts for data cleaning
-   - Complete with Gold layer scripts for analytical models
+3. **Initialize the database**
+   - Execute `scripts/init_database.sql` to set up the initial database structure
 
-4. **Validate data quality**
-   - Run test scripts to ensure data integrity
+4. **Execute scripts in order**
+   - Start with **Bronze layer** scripts to load raw data from CSV files
+   - Follow with **Silver layer** scripts for data cleaning and transformation
+   - Complete with **Gold layer** scripts for creating analytical models and dimension tables
+
+5. **Validate data quality**
+   - Run test scripts in the `tests/` directory to ensure data integrity
    - Review data quality reports
+
+---
+
+## 📚 Key Documentation
+
+- **[Data Catalog (Gold Layer)](docs/data_catalog_gold_layer.md)**: Comprehensive documentation of all tables, dimensions, and facts in the analytics layer
+- **[Naming Conventions](docs/naming_conventions.md)**: Consistent naming guidelines for tables, columns, and database objects
+- **[Project Diagram](docs/DataWarehouseProject.drawio)**: Complete DrawIO diagram with all architectural details
 
 ---
 
@@ -169,7 +162,7 @@ sql-data-warehouse-project/
 ✅ **Data Quality Framework**: Comprehensive validation and cleansing processes  
 ✅ **Star Schema Design**: Optimized dimensional model for analytics  
 ✅ **Scalable ETL**: Modular scripts supporting future data source additions  
-✅ **Documentation**: Complete technical and business documentation  
+✅ **Comprehensive Documentation**: Complete technical documentation and data catalogs  
 ✅ **Best Practices**: Industry-standard naming conventions and coding standards  
 
 ---
@@ -204,6 +197,6 @@ Feel free to reach out and connect with me on the following platforms:
 
 ## 🙏 Acknowledgments
 
-This project follows industry best practices in data warehousing and draws inspiration from modern data engineering methodologies. Thanks to the open-source community and all resources that made this learning journey possible.
+This project follows industry best practices in data warehousing and draws inspiration from modern data engineering methodologies. Special thanks to all resources and community that made this learning journey possible.
 
 **Happy Learning! 🚀**
