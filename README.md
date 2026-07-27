@@ -15,12 +15,6 @@ The data architecture for this project follows the **Medallion Architecture** pa
 2. **Silver Layer**: Implements data cleansing, standardization, validation, and normalization processes to prepare high-quality data for analysis.
 3. **Gold Layer**: Houses business-ready data modeled into a star schema, optimized for reporting, analytics, and business intelligence applications.
 
-**Data Flow Diagram:**
-![Data Flow](docs/data_flow_diagram.png)
-
-**Star Schema (Gold Layer):**
-![Star Schema](docs/star_schema_gold_layer.png)
-
 ---
 
 ## 📖 Project Overview
@@ -63,7 +57,7 @@ Everything is accessible and free!
 Develop a modern data warehouse using SQL Server to consolidate data from multiple source systems, enabling comprehensive analytical reporting and data-driven decision-making.
 
 #### Specifications
-- **Data Sources**: Import data from multiple source systems (ERP, CRM, etc.) provided as CSV files.
+- **Data Sources**: Import data from multiple source systems (ERP, CRM) provided as CSV files.
 - **Data Quality**: Implement comprehensive data cleansing and quality validation prior to analysis.
 - **Integration**: Combine multiple sources into a unified, analytically-optimized data model.
 - **Scope**: Focus on current dataset; historical data tracking not required for initial implementation.
@@ -189,9 +183,9 @@ This project is licensed under the [MIT License](LICENSE). You are free to use, 
 
 Feel free to reach out and connect with me on the following platforms:
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/mohamed-aasoum)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mohamed-aasoum-5ab774286/)
 [![GitHub](https://img.shields.io/badge/GitHub-000000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/mohamed-asm1)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:your-email@example.com)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:aasoum.mohamed1@gmail.com)
 
 ---
 
