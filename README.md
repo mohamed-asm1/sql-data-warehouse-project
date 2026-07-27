@@ -86,7 +86,7 @@ sql-data-warehouse-project/
 ├── datasets/                           # Raw datasets from source systems
 │
 ├── docs/                               # Project documentation and architecture
-│   ├── DataWarehouseProject.drawio     # Complete project diagram with all layers
+│   ├── data_warehouse_project.drawio     # Complete project diagram with all layers
 │   ├── high_level_architecture.png     # Medallion architecture visualization
 │   ├── data_flow_diagram.png           # Data flow visualization
 │   ├── star_schema_gold_layer.png      # Star schema diagram for analytics
