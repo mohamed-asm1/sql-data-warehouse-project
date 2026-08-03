@@ -1,7 +1,7 @@
 # SQL Data Warehouse Project
 
 Welcome to the **SQL Data Warehouse Project** repository! 🚀  
-This project demonstrates a comprehensive data warehousing solution built with SQL Server, showcasing industry best practices in data engineering, ETL pipelines, and data analytics. Designed as a portfolio project, it highlights modern approaches to data architecture and warehousing.
+This project demonstrates a comprehensive data warehousing solution built with SQL Server, showcasing industry best practices in data engineering, ETL pipelines, and data analytics. Designed as a portfolio project, it encompasses end-to-end data warehouse development from raw data ingestion through analytics and reporting.
 
 ---
 
@@ -14,6 +14,7 @@ The data architecture for this project follows the **Medallion Architecture** pa
 1. **Bronze Layer**: Stores raw data as-is from source systems. Data is ingested from CSV files directly into SQL Server without any transformation.
 2. **Silver Layer**: Implements data cleansing, standardization, validation, and normalization processes to prepare high-quality data for analysis.
 3. **Gold Layer**: Houses business-ready data modeled into a star schema, optimized for reporting, analytics, and business intelligence applications.
+4. **Reports Layer**: Delivers analytical insights through SQL-based reports built on top of the Gold layer data.
 
 ---
 
@@ -21,7 +22,7 @@ The data architecture for this project follows the **Medallion Architecture** pa
 
 This comprehensive data warehousing project encompasses:
 
-1. **Data Architecture Design**: Modern data warehouse implementation using Medallion Architecture with Bronze, Silver, and Gold layers.
+1. **Data Architecture Design**: Modern data warehouse implementation using Medallion Architecture with Bronze, Silver, Gold, and Reports layers.
 2. **ETL Pipelines**: Complete extraction, transformation, and loading processes from source systems into the warehouse.
 3. **Data Modeling**: Development of fact and dimension tables optimized for analytical queries and reporting (see [Gold Layer Data Catalog](docs/data_catalog_gold_layer.md)).
 4. **Data Quality**: Implementation of data validation, cleansing, and quality assurance mechanisms.
@@ -34,6 +35,7 @@ This comprehensive data warehousing project encompasses:
 - Data Modeling & Star Schema Design
 - Data Quality & Governance
 - Data Analytics & Business Intelligence
+- Report Development
 
 ---
 
@@ -68,11 +70,9 @@ Develop a modern data warehouse using SQL Server to consolidate data from multip
 ### Analytics & Reporting
 
 #### Objective
-Develop SQL-based analytics to deliver actionable insights into:
-- **Customer Behavior & Segmentation**
+Develop SQL-based analytics and reports to deliver actionable insights into:
+- **Customer Behavior & Analysis**
 - **Product Performance & Trends**
-- **Sales Analysis & Revenue Metrics**
-- **Operational Efficiency Metrics**
 
 These insights enable stakeholders to make strategic, data-driven business decisions.
 
@@ -98,6 +98,10 @@ sql-data-warehouse-project/
 │   ├── bronze/                         # Bronze layer: Raw data loading
 │   ├── silver/                         # Silver layer: Data transformation & cleansing
 │   └── gold/                           # Gold layer: Analytical models & reporting
+│
+├── reports/                            # Analytical reports and insights
+│   ├── customer_reports.sql            # Customer behavior and analysis
+│   └── product_reports.sql             # Product performance and trends
 │
 ├── tests/                              # Data quality tests and validation scripts
 │
@@ -136,7 +140,10 @@ sql-data-warehouse-project/
    - Follow with **Silver layer** scripts for data cleaning and transformation
    - Complete with **Gold layer** scripts for creating analytical models and dimension tables
 
-5. **Validate data quality**
+5. **Run analytical reports**
+   - Execute report scripts from the `reports/` directory to generate customer and product insights
+
+6. **Validate data quality**
    - Run test scripts in the `tests/` directory to ensure data integrity
    - Review data quality reports
 
@@ -152,10 +159,11 @@ sql-data-warehouse-project/
 
 ## 📊 Key Features
 
-✅ **Medallion Architecture**: Clean separation of concerns across Bronze, Silver, and Gold layers  
+✅ **Medallion Architecture**: Clean separation of concerns across Bronze, Silver, Gold, and Reports layers  
 ✅ **Data Quality Framework**: Comprehensive validation and cleansing processes  
 ✅ **Star Schema Design**: Optimized dimensional model for analytics  
 ✅ **Scalable ETL**: Modular scripts supporting future data source additions  
+✅ **Analytical Reports**: SQL-based reports for customer and product insights  
 ✅ **Comprehensive Documentation**: Complete technical documentation and data catalogs  
 ✅ **Best Practices**: Industry-standard naming conventions and coding standards  
 
@@ -163,13 +171,14 @@ sql-data-warehouse-project/
 
 ## 🎓 About This Project
 
-This project was developed as part of my data engineering studies at the **National School of Applied Sciences of Al Hoceima** (ENSA Al Hoceima). It represents practical application of modern data warehousing principles, demonstrating proficiency in:
+This project was developed as part of my data engineering studies at the **National School of Applied Sciences of Al Hoceima** (ENSA Al Hoceima). It represents practical application of modern data warehousing concepts and demonstrates proficiency in:
 
 - Designing enterprise data architectures
 - Developing ETL pipelines
 - Creating analytics-ready data models
 - Writing production-quality SQL code
 - Documenting complex data systems
+- Building analytical reports
 
 ---
 
